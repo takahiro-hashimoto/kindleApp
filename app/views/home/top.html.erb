@@ -26,5 +26,9 @@
   </div>
 </header>
 <main>
-  hoge
+  amazon = Amazon::Ecs.item_search('keyword', :search_index => 'All', :country => 'jp')
+  amazon.items.each do |item|
+  puts item.get("DetailPageURL")  # 詳細ページURLを取得
+  puts item.get("ItemAttributes/Title")  # 商品タイトルを取得
+end
 </main>
