@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+require 'amazon/ecs'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,10 +16,3 @@ module KndleApp
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-
-require 'amazon/ecs'
-Amazon::Ecs.options = {
-  :associate_tag =>     'kindle-sale-app-22',
-  :AWS_access_key_id => 'AKIAID5BKZJDQ2CWMREQ',
-  :AWS_secret_key =>    '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'
-}
